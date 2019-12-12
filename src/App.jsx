@@ -1,20 +1,22 @@
+// @flow
+
 import React, { useState, useMemo } from 'react';
 
 import { Box, Container, TextField, Button } from '@material-ui/core';
-import { MuiThemeProvider } from '@material-ui/core/styles'
+import { MuiThemeProvider, type ThemeOptions } from '@material-ui/core/styles'
 
 import ThemeSelector from './components/ThemeSelector';
 import Themes from './theme';
 
 export default function App() {
-  const [themeType, setThemeType] = useState('light');
+  const [themeType, setThemeType] = useState<string>('light');
 
-  const MuiTheme = useMemo(
+  const MuiTheme = useMemo<ThemeOptions>(
     () => Themes[themeType],
     [themeType],
   );
 
-  const handleOnThemeChange = (themeType) => {
+  const handleOnThemeChange = (themeType: string) => {
     setThemeType(themeType)
   }
 

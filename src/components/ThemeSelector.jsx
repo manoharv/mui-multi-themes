@@ -1,8 +1,15 @@
+// @flow
+
 import React from 'react';
 
 import { Container, FormControlLabel, FormControl, FormLabel, Radio, RadioGroup } from '@material-ui/core';
 
-export default function ThemeSelector({ themeType, onThemeChange }) {
+type Props = {
+  themeType: string,
+  onThemeChange: (string) => void,
+}
+
+export default function ThemeSelector({ themeType, onThemeChange }: Props) {
   const handleOnChange = (event) => {
     onThemeChange(event.target.value)
   }
