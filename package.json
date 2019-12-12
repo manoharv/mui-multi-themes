@@ -42,8 +42,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run eslintx:all",
-      "pre-push": "npm run eslintx:all"
+      "pre-commit": "npm run eslintx:all && yarn run flow",
+      "pre-push": "npm run eslintx:all && yarn run flow"
     }
   }
 }
